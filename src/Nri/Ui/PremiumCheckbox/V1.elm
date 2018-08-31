@@ -1,4 +1,4 @@
-module Nri.Ui.PremiumCheckbox.V1 exposing (PremiumConfig, premium)
+module Nri.Ui.PremiumCheckbox.V1 exposing (PremiumConfig, Status(..), premium)
 
 {-|
 
@@ -26,13 +26,18 @@ type alias PremiumConfig msg =
     , id : String
     , selected : Checkbox.IsSelected
     , disabled : Bool
-    , isLocked : Bool
-    , isFree : Bool
+    , status : Status
     , showFlagWhenLocked : Bool
     , onChange : Bool -> msg
     , onLockedClick : msg
     , noOpMsg : msg
     }
+
+
+type Status
+    = Free
+    | PaidAndLocked
+    | PaidAndUnlocked
 
 
 {-| A checkbox that should be used for premium content
@@ -52,23 +57,30 @@ premium assets config =
             { identifier = config.id
             , label = config.label
             , setterMsg =
-                if config.isLocked then
-                    \_ -> config.onLockedClick
-                else
-                    config.onChange
+                case config.status of
+                    Free ->
+                        config.onChange
+
+                    PaidAndLocked ->
+                        \_ -> config.onLockedClick
+
+                    PaidAndUnlocked ->
+                        config.onChange
             , selected = config.selected
             , disabled = config.disabled
             , theme =
-                if config.isLocked then
-                    Checkbox.Locked
-                else
-                    Checkbox.Square
+                case config.status of
+                    Free ->
+                        Checkbox.Square
+
+                    PaidAndLocked ->
+                        Checkbox.Locked
+
+                    PaidAndUnlocked ->
+                        Checkbox.Square
             , noOpMsg = config.noOpMsg
             }
-        , if
-            (config.isLocked && config.showFlagWhenLocked)
-                || (not config.isLocked && not config.isFree)
-          then
+        , if (config.status == PaidAndLocked && config.showFlagWhenLocked) || config.status == PaidAndUnlocked then
             Html.div
                 [ Attributes.class "premium-checkbox-V1__PremiumClass"
                 , css

@@ -16,8 +16,20 @@ premiumView config =
         , id = "id"
         , selected = config.selected
         , disabled = config.disabled
-        , isLocked = not <| PremiumLevel.allowedFor config.contentPremiumLevel config.teacherPremiumLevel
-        , isFree = config.contentPremiumLevel == PremiumLevel.Free
+        , status =
+            case
+                ( config.contentPremiumLevel == PremiumLevel.Free
+                , PremiumLevel.allowedFor config.contentPremiumLevel config.teacherPremiumLevel
+                )
+            of
+                ( True, _ ) ->
+                    PremiumCheckbox.Free
+
+                ( False, True ) ->
+                    PremiumCheckbox.PaidAndUnlocked
+
+                ( False, False ) ->
+                    PremiumCheckbox.PaidAndLocked
         , showFlagWhenLocked = config.showFlagWhenLocked
         , onChange = \_ -> ()
         , onLockedClick = ()
