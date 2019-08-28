@@ -13,7 +13,7 @@ import Html.Styled as Html exposing (Html)
 import Html.Styled.Attributes as Attr exposing (css)
 import Html.Styled.Events as Events
 import Nri.Ui
-import Nri.Ui.Colors.Extra exposing (withAlpha)
+import Colors.Extra exposing (withAlpha)
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1 as Fonts
 import Nri.Ui.Icon.V3 as Icon

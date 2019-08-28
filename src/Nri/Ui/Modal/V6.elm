@@ -92,7 +92,7 @@ import Html.Attributes exposing (style)
 import Html.Styled.Attributes exposing (css)
 import Html.Styled.Events exposing (onClick)
 import Nri.Ui
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1 as Fonts
 import Nri.Ui.SpriteSheet
@@ -207,7 +207,7 @@ view { overlayColor, titleColor } config model =
 toOverlayColor : Css.Color -> String
 toOverlayColor color =
     color
-        |> Nri.Ui.Colors.Extra.fromCssColor
+        |> Colors.Extra.fromCssColor
         |> Color.Transparent.fromColor (Color.Transparent.customOpacity 0.9)
         |> Color.Transparent.toRGBAString
 
@@ -218,7 +218,7 @@ modalStyles =
     , style "max-height" "calc(100vh - 100px)"
     , style "padding" "40px 0 40px 0"
     , style "margin" "75px auto"
-    , style "background-color" ((Color.toRGBString << Nri.Ui.Colors.Extra.fromCssColor) Colors.white)
+    , style "background-color" ((Color.toRGBString << Colors.Extra.fromCssColor) Colors.white)
     , style "border-radius" "20px"
     , style "box-shadow" "0 1px 10px 0 rgba(0, 0, 0, 0.35)"
     , style "position" "relative" -- required for closeButtonContainer
@@ -235,7 +235,7 @@ viewTitle color { visibleTitle, title } =
         , style "margin" "0 49px"
         , style "font-size" "20px"
         , style "text-align" "center"
-        , style "color" ((Color.toRGBString << Nri.Ui.Colors.Extra.fromCssColor) color)
+        , style "color" ((Color.toRGBString << Colors.Extra.fromCssColor) color)
         ]
 
       else

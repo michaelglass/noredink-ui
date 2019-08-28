@@ -61,7 +61,7 @@ import Markdown.Block
 import Markdown.Inline
 import Nri.Ui
 import Nri.Ui.AssetPath as AssetPath exposing (Asset)
-import Nri.Ui.Colors.Extra as ColorsExtra
+import Colors.Extra as ColorsExtra
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1
 import Nri.Ui.Icon.V4 as Icon exposing (IconType)

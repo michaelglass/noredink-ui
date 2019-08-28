@@ -28,7 +28,7 @@ import Html.Styled.Keyed as Keyed
 import Nri.Ui
 import Nri.Ui.AssetPath exposing (Asset(..))
 import Nri.Ui.Button.V8 as Button
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1 as Fonts
 import Nri.Ui.Icon.V3 as Icon
@@ -186,7 +186,7 @@ viewBackdrop : Html msg -> Html msg
 viewBackdrop modal =
     Nri.Ui.styled div
         "modal-backdrop-container"
-        (Css.backgroundColor (Nri.Ui.Colors.Extra.withAlpha 0.9 Colors.navy)
+        (Css.backgroundColor (Colors.Extra.withAlpha 0.9 Colors.navy)
             :: [ Css.height (Css.vh 100)
                , Css.left Css.zero
                , Css.overflowX Css.hidden
@@ -385,7 +385,7 @@ dot type_ =
                 ]
 
         animateBackgroundColor color =
-            Nri.Ui.Colors.Extra.fromCssColor color
+            Colors.Extra.fromCssColor color
                 |> Color.toRGBString
                 |> Css.Animations.property "background-color"
     in

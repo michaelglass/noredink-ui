@@ -1,4 +1,4 @@
-module Nri.Ui.Colors.Extra exposing
+module Colors.Extra exposing
     ( toCssColor, fromCssColor
     , withAlpha
     )

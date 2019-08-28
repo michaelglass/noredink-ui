@@ -104,7 +104,7 @@ import Html.Attributes exposing (style)
 import Html.Styled.Attributes as Attributes exposing (css)
 import Html.Styled.Events exposing (onClick)
 import Nri.Ui
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1 as Fonts
 import Nri.Ui.SpriteSheet
@@ -222,7 +222,7 @@ view :
 view { overlayColor, titleColor } config attributes model =
     Modal.view config.wrapMsg
         config.title
-        ([ Modal.overlayColor (Nri.Ui.Colors.Extra.withAlpha 0.9 overlayColor)
+        ([ Modal.overlayColor (Colors.Extra.withAlpha 0.9 overlayColor)
          , Modal.titleStyles
             (if config.visibleTitle then
                 titleStyles titleColor
@@ -244,7 +244,7 @@ modalStyles =
     [ Css.property "width" "600px"
     , Css.property "padding" "40px 0 40px 0"
     , Css.property "margin" "75px auto"
-    , Css.property "background-color" ((Color.toRGBString << Nri.Ui.Colors.Extra.fromCssColor) Colors.white)
+    , Css.property "background-color" ((Color.toRGBString << Colors.Extra.fromCssColor) Colors.white)
     , Css.property "border-radius" "20px"
     , Css.property "box-shadow" "0 1px 10px 0 rgba(0, 0, 0, 0.35)"
     , Css.property "position" "relative" -- required for closeButtonContainer
@@ -259,7 +259,7 @@ titleStyles color =
     , Css.property "margin" "0 49px"
     , Css.property "font-size" "20px"
     , Css.property "text-align" "center"
-    , Css.property "color" ((Color.toRGBString << Nri.Ui.Colors.Extra.fromCssColor) color)
+    , Css.property "color" ((Color.toRGBString << Colors.Extra.fromCssColor) color)
     ]
 
 

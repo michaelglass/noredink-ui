@@ -11,7 +11,7 @@ import Css
 import Html.Styled as Html
 import Html.Styled.Attributes as Attributes exposing (css)
 import ModuleExample as ModuleExample exposing (Category(..), ModuleExample)
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1 as Colors
 
 
@@ -105,9 +105,9 @@ viewColor ( name, color, description ) =
 
             -- Colors
             , Css.backgroundColor color
-            , Nri.Ui.Colors.Extra.fromCssColor color
+            , Colors.Extra.fromCssColor color
                 |> highContrast
-                |> Nri.Ui.Colors.Extra.toCssColor
+                |> Colors.Extra.toCssColor
                 |> Css.color
             ]
         ]

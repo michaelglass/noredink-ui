@@ -40,7 +40,7 @@ import Html.Styled.Events as Events
 import Json.Decode
 import List.Zipper exposing (Zipper(..))
 import Nri.Ui
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1
 
@@ -390,9 +390,9 @@ stylesTabSelectable isSelected =
                 [ Css.backgroundColor Colors.frost
                 , Css.backgroundImage <|
                     Css.linearGradient2 Css.toTop
-                        (Css.stop2 (Nri.Ui.Colors.Extra.withAlpha 0.25 Colors.azure) (Css.pct 0))
-                        (Css.stop2 (Nri.Ui.Colors.Extra.withAlpha 0 Colors.azure) (Css.pct 25))
-                        [ Css.stop2 (Nri.Ui.Colors.Extra.withAlpha 0 Colors.azure) (Css.pct 100) ]
+                        (Css.stop2 (Colors.Extra.withAlpha 0.25 Colors.azure) (Css.pct 0))
+                        (Css.stop2 (Colors.Extra.withAlpha 0 Colors.azure) (Css.pct 25))
+                        [ Css.stop2 (Colors.Extra.withAlpha 0 Colors.azure) (Css.pct 100) ]
                 ]
     in
     stylesTab ++ stylesDynamic

@@ -20,7 +20,7 @@ import Css.Global exposing (Snippet, adjacentSiblings, children, class, descenda
 import Html.Styled as Html exposing (Html)
 import Html.Styled.Attributes exposing (css)
 import Html.Styled.Events
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1
 import Nri.Ui.CssVendorPrefix.V1 as CssVendorPrefix
 import Nri.Ui.Table.V5
@@ -365,4 +365,4 @@ sortArrow direction active =
 
 toCssString : Css.Color -> String
 toCssString =
-    Color.toRGBString << Nri.Ui.Colors.Extra.fromCssColor
+    Color.toRGBString << Colors.Extra.fromCssColor

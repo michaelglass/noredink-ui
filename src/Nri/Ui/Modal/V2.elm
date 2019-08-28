@@ -22,7 +22,7 @@ import Css.Global exposing (Snippet, body, children, descendants, everything, se
 import Html.Styled
 import Html.Styled.Events exposing (onClick)
 import Nri.Ui
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1
 import Nri.Ui.Fonts.V1 as Fonts
 
@@ -70,10 +70,10 @@ view modalType { title, visibleTitle, content, onDismiss, footerContent, width }
         "modal-backdrop-container"
         ((case modalType of
             Info ->
-                Css.backgroundColor (Nri.Ui.Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.navy)
+                Css.backgroundColor (Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.navy)
 
             Warning ->
-                Css.backgroundColor (Nri.Ui.Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.gray20)
+                Css.backgroundColor (Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.gray20)
          )
             :: [ Css.height (Css.vh 100)
                , Css.left Css.zero

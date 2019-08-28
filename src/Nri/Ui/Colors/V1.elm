@@ -27,7 +27,7 @@ module Nri.Ui.Colors.V1 exposing
 
 {-| Comprehensive list of named colors.
 
-For helpers & conversions, see Nri.Ui.Colors.Extra, or
+For helpers & conversions, see Colors.Extra, or
 consider [elm-color-extra](http://package.elm-lang.org/packages/eskimoblood/elm-color-extra/5.0.0/).
 
 @docs aqua, aquaDark, aquaLight, azure, azureDark
@@ -58,7 +58,7 @@ consider [elm-color-extra](http://package.elm-lang.org/packages/eskimoblood/elm-
 -}
 
 import Css exposing (hex, rgba)
-import Nri.Ui.Colors.Extra exposing (withAlpha)
+import Colors.Extra exposing (withAlpha)
 
 
 {-|

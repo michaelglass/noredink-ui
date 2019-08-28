@@ -78,7 +78,7 @@ import Html.Attributes exposing (style)
 import Html.Styled.Attributes exposing (css)
 import Html.Styled.Events exposing (onClick)
 import Nri.Ui
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1 as Colors
 import Nri.Ui.Fonts.V1 as Fonts
 import Nri.Ui.SpriteSheet
@@ -164,7 +164,7 @@ warning config model =
 
 toOverlayColor : Css.Color -> String
 toOverlayColor color =
-    toCssString (Nri.Ui.Colors.Extra.withAlpha 0.9 color)
+    toCssString (Colors.Extra.withAlpha 0.9 color)
 
 
 modalStyles : List (Root.Attribute Never)
@@ -200,7 +200,7 @@ viewTitle color { visibleTitle, title } =
 
 toCssString : Css.Color -> String
 toCssString =
-    Nri.Ui.Colors.Extra.fromCssColor >> Color.toRGBString
+    Colors.Extra.fromCssColor >> Color.toRGBString
 
 
 {-| -}

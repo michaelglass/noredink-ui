@@ -27,7 +27,7 @@ import Html.Styled
 import Html.Styled.Events exposing (onClick)
 import Nri.Ui
 import Nri.Ui.AssetPath exposing (Asset(..))
-import Nri.Ui.Colors.Extra
+import Colors.Extra
 import Nri.Ui.Colors.V1
 import Nri.Ui.Fonts.V1 as Fonts
 import Nri.Ui.Icon.V3 as Icon
@@ -93,10 +93,10 @@ view assets modalType { title, visibleTitle, content, onDismiss, footerContent, 
         "modal-backdrop-container"
         ((case modalType of
             Info ->
-                Css.backgroundColor (Nri.Ui.Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.navy)
+                Css.backgroundColor (Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.navy)
 
             Warning ->
-                Css.backgroundColor (Nri.Ui.Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.gray20)
+                Css.backgroundColor (Colors.Extra.withAlpha 0.9 Nri.Ui.Colors.V1.gray20)
          )
             :: [ Css.height (Css.vh 100)
                , Css.left Css.zero
